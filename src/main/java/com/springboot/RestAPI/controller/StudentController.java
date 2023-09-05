@@ -45,4 +45,10 @@ public class StudentController {
         return student;
     }
 
+    //Updating the REST API
+    @PutMapping("students/{id}/update")
+    public Student updateStatus(@RequestBody Student student,@PathVariable("id") int studentId){
+        return student;
+    }
+
 }
