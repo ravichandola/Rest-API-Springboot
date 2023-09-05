@@ -51,4 +51,9 @@ public class StudentController {
         return student;
     }
 
+    //Deleting the REST API
+    @DeleteMapping("students/{id}/delete")
+    public String deleteStudent(@PathVariable("id") int studentId){
+        return "Student deleted Successfully!";
+    }
 }
