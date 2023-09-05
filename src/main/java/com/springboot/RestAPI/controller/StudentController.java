@@ -1,9 +1,7 @@
 package com.springboot.RestAPI.controller;
 import com.springboot.RestAPI.bean.Student;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,4 +36,13 @@ public class StudentController {
     public Student studentRequestParam(@RequestParam int id,@RequestParam String firstName,@RequestParam String lastName){
         return new Student(id,firstName,lastName);
     }
+
+    //Spring Boot Rest API that handles HTTP Post Request
+    //@PostMapping and @RequestBody
+    @PostMapping("students/create")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Student createStudent(@RequestBody Student student){
+        return student;
+    }
+
 }
