@@ -8,15 +8,14 @@
 		<version>3.2.0-SNAPSHOT</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.springboot</groupId>
-	<artifactId>Rest-API</artifactId>
+	<groupId>net.javaguides</groupId>
+	<artifactId>springboot-rest-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Rest-API</name>
-	<description>Demo project for Spring Boot</description>
+	<name>springboot-rest-api</name>
+	<description>Demo project for Spring Boot REST API</description>
 	<properties>
-		<java.version>18</java.version>
+		<java.version>17</java.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -25,14 +24,6 @@
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-<<<<<<< HEAD
-			<artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-=======
->>>>>>> 7fd1f10 (First Commit - Fix tomcat server port and design controller)
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
@@ -55,14 +46,6 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
-		<repository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-		</repository>
 	</repositories>
 	<pluginRepositories>
 		<pluginRepository>
@@ -72,14 +55,6 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>
-		<pluginRepository>
-			<id>spring-snapshots</id>
-			<name>Spring Snapshots</name>
-			<url>https://repo.spring.io/snapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
 		</pluginRepository>
 	</pluginRepositories>
 
