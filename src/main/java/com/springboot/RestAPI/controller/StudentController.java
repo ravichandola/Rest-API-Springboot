@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequestMapping("students")
 public class StudentController {
     @GetMapping("student")
     public ResponseEntity<Student> getStudent(){
@@ -17,7 +18,7 @@ public class StudentController {
                 .header("custom-header","ramesh")
                 .body(student);
     }
-@GetMapping("students")
+@GetMapping
     public ResponseEntity <List<Student>> getStudents(){
         List<Student> students = new ArrayList<>();
         students.add(new Student(1,"Ram","Srivastav"));
@@ -26,7 +27,7 @@ public class StudentController {
         students.add(new Student(4,"Dakshita","Srivastav"));
         return ResponseEntity.ok(students);
     }
-    @GetMapping("students/{id}/{first-name}/{last-name}")
+    @GetMapping("{id}/{first-name}/{last-name}")
     public ResponseEntity<Student> studentPathVar(@PathVariable("id") int studentId,
                                   @PathVariable("first-name") String firstName,
                                   @PathVariable("last-name") String lastName
@@ -37,7 +38,7 @@ public class StudentController {
 
     //Spring Boot Rest API with Request Param
     //localhost:8081/students/query?id=2&firstName=Ravi&lastName=Chandola
-    @GetMapping("students/query")
+    @GetMapping("query")
     public ResponseEntity <Student> studentRequestParam(@RequestParam int id,@RequestParam String firstName,@RequestParam String lastName){
         Student student = new Student(id,firstName,lastName);
         return ResponseEntity.ok(student);
@@ -45,20 +46,20 @@ public class StudentController {
 
     //Spring Boot Rest API that handles HTTP Post Request
     //@PostMapping and @RequestBody
-    @PostMapping("students/create")
+    @PostMapping("create")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<Student> createStudent(@RequestBody Student student){
         return new ResponseEntity<>(student,HttpStatus.CREATED);
     }
 
     //Updating the REST API
-    @PutMapping("students/{id}/update")
+    @PutMapping("{id}/update")
     public ResponseEntity<Student> updateStatus(@RequestBody Student student,@PathVariable("id") int studentId){
-        return new ResponseEntity.ok(student);
+        return  ResponseEntity.ok(student);
     }
 
     //Deleting the REST API
-    @DeleteMapping("students/{id}/delete")
+    @DeleteMapping("{id}/delete")
     public ResponseEntity<String> deleteStudent(@PathVariable("id") int studentId){
         return ResponseEntity.ok("Student deleted Successfully!");
     }
